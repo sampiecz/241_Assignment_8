@@ -17,7 +17,7 @@ class Mergesort
 template <class T>
 void mergeSort(vector<T>& set, bool (*compare)(const T&, const T&))
 {
-
+    mergeSort(set, 0, set.size()-1, compare);
 }
 
 // This recursive function divides a vector into two subvectors, sorts them, and then merges the two sorted subvectors.
@@ -53,10 +53,13 @@ void merge(vector<T>& set, int low, int mid, int high, bool (*compare)(const T&,
         if (compare(set[j], set[i]))
         {
             /*
-            Copy elelment j of set into element k of temp
+            Copy element j of set into element k of temp
             Add one to j
             Add one to k
             */
+            strcpy(temp[k], set[j]);
+            ++j;
+            ++k;
         }
         else
         {
@@ -66,6 +69,9 @@ void merge(vector<T>& set, int low, int mid, int high, bool (*compare)(const T&,
              * Add one to k
              *
              */
+            strcpy(temp[k], set[i]);
+            ++i;
+            ++k;
         }
     }
 
@@ -78,6 +84,9 @@ void merge(vector<T>& set, int low, int mid, int high, bool (*compare)(const T&,
          * Add one to k
          *
          */
+        strcpy(temp[k], set[i]);
+        ++i;
+        ++k;
     }
 
     // Copy over any remaining elements of right subvector
@@ -89,12 +98,16 @@ void merge(vector<T>& set, int low, int mid, int high, bool (*compare)(const T&,
          * Add one to k
          *
          */
+        strcpy(temp[k], set[j]);
+        ++j;
+        ++k;
     }
 
     // Copy merged elements back into original vector
     for (i = 0, j = low; j <= high; i++, j++)
     {
-        // Copy element i of tem into element j of set
+        // Copy element i of temp into element j of set
+        strcpy(set[j], temp[i]);
     }
 }
 
