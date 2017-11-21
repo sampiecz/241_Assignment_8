@@ -29,6 +29,7 @@ bool (*compare)(const T& a, const T& b)
     {
         return true;
     }
+
 }
 
 template <class T>
@@ -76,7 +77,5 @@ int partition(vector<T>& set, int start, int end, bool (*compare)(const T&, cons
 
     return pivotIndex;
 }
-
-bool (*compare)(int a, int b);
 
 #endif
