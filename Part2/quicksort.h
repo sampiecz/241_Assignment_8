@@ -1,3 +1,11 @@
+//*********************************************************************
+//// FILE:        quicksort.h
+//// AUTHOR:      Samuel Piecz
+//// LOGON ID:    Z1732715
+//// DUE DATE:    11/29/17
+////
+//// PURPOSE:      
+////********************************************************************
 #ifndef QUICKSORT_H
 #define QUICKSORT_H
 
@@ -10,12 +18,30 @@ template <class T> void quickSort(vector<T>& set, bool (*compare)(const T&, cons
 template <class T> void quickSort(vector<T> & set, int start, int end, bool (*compare)(const T&, const T&));
 template <class T> int partition(vector<T>& set, int start, int end, bool (*compare)(const T&, const T&));
 
+/***************************************************************
+ Name 
+
+ Use: 
+
+ Parameters: 
+
+ Returns: 
+***************************************************************/
 template <class T>
 void quickSort(vector<T>& set, bool (*compare)(const T&, const T&))
 {
     quickSort(set, 0, set.size()-1, compare);
 }
 
+/***************************************************************
+ Name 
+
+ Use: 
+
+ Parameters: 
+
+ Returns: 
+***************************************************************/
 template <class T>
 void quickSort(vector<T> & set, int start, int end, bool (*compare)(const T&, const T&))
 {
@@ -29,11 +55,20 @@ void quickSort(vector<T> & set, int start, int end, bool (*compare)(const T&, co
     }
 }
 
+/***************************************************************
+ Name 
+
+ Use: 
+
+ Parameters: 
+
+ Returns: 
+***************************************************************/
 template <class T>
 int partition(vector<T>& set, int start, int end, bool (*compare)(const T&, const T&))
 {
     int pivotIndex, mid;
-    T pivotValue;
+    T pivotValue, temp;
 
     mid = (start + end) / 2;
 
@@ -62,23 +97,6 @@ int partition(vector<T>& set, int start, int end, bool (*compare)(const T&, cons
     set[pivotIndex] = temp;
 
     return pivotIndex;
-}
-
-// Define compare method that should take the above functions as
-template <class T> bool (*compare)(const T&, const T&);
-
-template <class T>
-bool (*compare)(const T& a, const T& b)
-{
-    if (!strcmp(a, b))
-    {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
-
 }
 
 #endif

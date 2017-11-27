@@ -24,6 +24,15 @@ class Sorts
 
 };
 
+/***************************************************************
+ Name 
+
+ Use: 
+
+ Parameters: 
+
+ Returns: 
+***************************************************************/
 template <class T>
 void buildList(vector<T>& set, const char* fileName)
 {
@@ -51,6 +60,15 @@ void buildList(vector<T>& set, const char* fileName)
     inFile.close();
 }
 
+/***************************************************************
+ Name 
+
+ Use: 
+
+ Parameters: 
+
+ Returns: 
+***************************************************************/
 template <class T>
 void printList(const vector<T>& set, int itemWidth, int numPerLine)
 {
@@ -71,6 +89,15 @@ void printList(const vector<T>& set, int itemWidth, int numPerLine)
     }
 }
 
+/***************************************************************
+ Name 
+
+ Use: 
+
+ Parameters: 
+
+ Returns: 
+***************************************************************/
 template <class T>
 bool lessThan(const T& item1, const T& item2)
 {
@@ -84,6 +111,15 @@ bool lessThan(const T& item1, const T& item2)
     }
 }
 
+/***************************************************************
+ Name 
+
+ Use: 
+
+ Parameters: 
+
+ Returns: 
+***************************************************************/
 template <class T>
 bool greaterThan(const T& item1, const T& item2)
 {
