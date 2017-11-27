@@ -1,17 +1,36 @@
+//*********************************************************************
+//// FILE:        sorts.h
+//// AUTHOR:      Samuel Piecz
+//// LOGON ID:    Z1732715
+//// DUE DATE:    11/29/17
+////
+//// PURPOSE:      
+////********************************************************************
 #ifndef SORTS_H
 #define SORTS_H
 
 #include <iostream>
 #include <fstream>
+
 using namespace std;
 
-// Part 1
-template <class T> void buildList(vector<T>& set, const char* fileName);
-template <class T> void printList(const vector<T>& set, int itemWidth, int numPerLine);
+template <class T>
+class Sorts
+{
+    // Data members
+    private:
 
-// Part 2
-template <class T> bool lessThan(const T& item1, const T& item2);
-template <class T> bool greaterThan(const T& item1, const T& item2);
+    // Method prototypes
+    public:
+        // Part 1
+        void buildList(vector<T>& set, const char* fileName);
+        void printList(const vector<T>& set, int itemWidth, int numPerLine);
+
+        // Part 2
+        bool lessThan(const T& item1, const T& item2);
+        bool greaterThan(const T& item1, const T& item2);
+
+};
 
 /***************************************************************
  Name 
