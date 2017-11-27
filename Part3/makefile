@@ -12,7 +12,7 @@ assign8: assign8.o
 	g++ $(CCFLAGS) -o assign8 assign8.o
 
 # Rule to compile source code file to object code
-assign8.o: assign8.cpp    mergesort.h
+assign8.o: assign8.cpp    quicksort.h    sorts.h
 	g++ $(CCFLAGS) -c assign8.cpp
 
 # Pseudo-target to remove object code and executable files

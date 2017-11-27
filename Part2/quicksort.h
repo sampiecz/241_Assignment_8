@@ -68,11 +68,13 @@ template <class T>
 int partition(vector<T>& set, int start, int end, bool (*compare)(const T&, const T&))
 {
     int pivotIndex, mid;
-    T pivotValue, temp;
+    T pivotValue;
+    T temp;
 
     mid = (start + end) / 2;
 
     // Swap elements start and mid of the vector
+    temp = set[start];
     set[start] = set[mid];
     set[mid] = temp;
 
