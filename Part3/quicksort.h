@@ -4,7 +4,7 @@
 //// LOGON ID:    Z1732715
 //// DUE DATE:    11/29/17
 ////
-//// PURPOSE:      
+//// PURPOSE:     Recursively sort a list of items using quick sort. 
 ////********************************************************************
 #ifndef QUICKSORT_H
 #define QUICKSORT_H
@@ -19,13 +19,15 @@ template <class T> void quickSort(vector<T> & set, int start, int end, bool (*co
 template <class T> int partition(vector<T>& set, int start, int end, bool (*compare)(const T&, const T&));
 
 /***************************************************************
- Name 
+ Name: quickSort 
 
- Use: 
+ Use: Recursively call the alternate quickSort function. 
 
- Parameters: 
+ Parameters: A reference to a vector of type T, and a pointer
+ to the compare function which takes two references to constant
+ objects of type T. 
 
- Returns: 
+ Returns: No return 
 ***************************************************************/
 template <class T>
 void quickSort(vector<T>& set, bool (*compare)(const T&, const T&))
@@ -34,13 +36,17 @@ void quickSort(vector<T>& set, bool (*compare)(const T&, const T&))
 }
 
 /***************************************************************
- Name 
+ Name: quickSort 
 
- Use: 
+ Use: This is the logic for the quickSort algorithm function.
+ This function is then called recursively via the other 
+ quicksort function.
 
- Parameters: 
+ Parameters:  A reference to a vector of type T, and a pointer
+ to the compare function which takes two references to constant
+ objects of type T, plus two integer variables.
 
- Returns: 
+ Returns: No return 
 ***************************************************************/
 template <class T>
 void quickSort(vector<T> & set, int start, int end, bool (*compare)(const T&, const T&))
@@ -56,13 +62,16 @@ void quickSort(vector<T> & set, int start, int end, bool (*compare)(const T&, co
 }
 
 /***************************************************************
- Name 
+ Name: partition 
 
- Use: 
+ Use: This function selects a pivot element and then partitions
+ the vector around the pivot. 
 
- Parameters: 
+ Parameters:  A reference to a vector of type T, and a pointer
+ to the compare function which takes two references to constant
+ objects of type T, plus two integer variables.
 
- Returns: 
+ Returns: pivotIndex 
 ***************************************************************/
 template <class T>
 int partition(vector<T>& set, int start, int end, bool (*compare)(const T&, const T&))

@@ -1,3 +1,11 @@
+//*********************************************************************
+//// FILE:        sorts.h
+//// AUTHOR:      Samuel Piecz
+//// LOGON ID:    Z1732715
+//// DUE DATE:    11/29/17
+////
+//// PURPOSE:      
+////********************************************************************
 #ifndef SORTS_H
 #define SORTS_H
 
@@ -14,13 +22,14 @@ template <class T> bool lessThan(const T& item1, const T& item2);
 template <class T> bool greaterThan(const T& item1, const T& item2);
 
 /***************************************************************
- Name 
+ Name: buildList 
 
- Use: 
+ Use: Opens file, reads through items, closes file. 
 
- Parameters: 
+ Parameters: A reference to a vector of type template, and a
+ pointer to a constant char. 
 
- Returns: 
+ Returns: No return 
 ***************************************************************/
 template <class T>
 void buildList(vector<T>& set, const char* fileName)
@@ -50,13 +59,14 @@ void buildList(vector<T>& set, const char* fileName)
 }
 
 /***************************************************************
- Name 
+ Name: printList 
 
- Use: 
+ Use: Prints out a list. 
 
- Parameters: 
+ Parameters: Reference to a constant vector of type template,
+ and two integers. 
 
- Returns: 
+ Returns: No return 
 ***************************************************************/
 template <class T>
 void printList(const vector<T>& set, int itemWidth, int numPerLine)
@@ -79,13 +89,13 @@ void printList(const vector<T>& set, int itemWidth, int numPerLine)
 }
 
 /***************************************************************
- Name 
+ Name: lessThan 
 
- Use: 
+ Use: Compares two items and checks if item1 is less than item2. 
 
- Parameters: 
+ Parameters: Two references to constant type T objects. 
 
- Returns: 
+ Returns: A bool. 
 ***************************************************************/
 template <class T>
 bool lessThan(const T& item1, const T& item2)
@@ -101,13 +111,14 @@ bool lessThan(const T& item1, const T& item2)
 }
 
 /***************************************************************
- Name 
+ Name: greaterThan 
 
- Use: 
+ Use: Compare item1 and item 2, see if item1 is greater than
+ item 2. 
 
- Parameters: 
+ Parameters: Two references to constant objects of type T. 
 
- Returns: 
+ Returns: A bool. 
 ***************************************************************/
 template <class T>
 bool greaterThan(const T& item1, const T& item2)

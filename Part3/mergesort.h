@@ -1,3 +1,11 @@
+//*********************************************************************
+//// FILE:        mergesort.h
+//// AUTHOR:      Samuel Piecz
+//// LOGON ID:    Z1732715
+//// DUE DATE:    11/29/17
+////
+//// PURPOSE:      
+////********************************************************************
 #ifndef MERGESORT_H
 #define MERGESORT_H
 
@@ -11,13 +19,18 @@ template <class T> void mergeSort(vector<T>& set, int low, int high, bool (*comp
 template <class T> void merge(vector<T>& set, int low, int mid, int high, bool (*compare)(const T&, const T&));
 
 /***************************************************************
- Name 
+ Name: mergeSort 
 
- Use: 
+ Use: This function should sort the items in the vector set 
+ using the merge sort algorithm. 
 
- Parameters: 
+ Parameters: The first argument to this 
+ function is a reference to a vector object containing the list
+ of items to sort. The second argument is a pointer to a 
+ comparison function that can be used to compare two items of
+ the template type. 
 
- Returns: 
+ Returns: No return 
 ***************************************************************/
 template <class T>
 void mergeSort(vector<T>& set, bool (*compare)(const T&, const T&))
@@ -26,15 +39,17 @@ void mergeSort(vector<T>& set, bool (*compare)(const T&, const T&))
 }
 
 /***************************************************************
- Name 
+ Name: mergeSort 
 
- Use: 
+ Use: This recursive function divides a vector into two 
+ subvectors, sorts them, and then merges the two sorted subvectors. 
 
- Parameters: 
+ Parameters: A reference to a vector of type T, and a pointer
+ to the compare function which takes two references to constant
+ objects of type T, plus two integer variables.
 
- Returns: 
+ Returns: No return 
 ***************************************************************/
-// This recursive function divides a vector into two subvectors, sorts them, and then merges the two sorted subvectors.
 template <class T>
 void mergeSort(vector<T>& set, int low, int high, bool (*compare)(const T&, const T&))
 {
@@ -54,13 +69,15 @@ void mergeSort(vector<T>& set, int low, int high, bool (*compare)(const T&, cons
 }
 
 /***************************************************************
- Name 
+ Name: merge 
 
- Use: 
+ Use: This function merges two sorted subvectors. 
 
- Parameters: 
+ Parameters: A reference to a vector of type T, and a pointer
+ to the compare function which takes two references to constant
+ objects of type T, plus three integer variables.
 
- Returns: 
+ Returns: No return 
 ***************************************************************/
 // This function merges two sorted subvectors.
 template <class T>
@@ -80,24 +97,13 @@ void merge(vector<T>& set, int low, int mid, int high, bool (*compare)(const T&,
 
         if (compare(set[j], set[i]))
         {
-            /*
-            Copy element j of set into element k of temp
-            Add one to j
-            Add one to k
-            */
-            temp[k] = set[j];
+           temp[k] = set[j];
             j++;
             k++;
         }
         else
         {
-            /*
-             * Copy element i of set into element k of temp
-             * Add one to i
-             * Add one to k
-             *
-             */
-            temp[k] = set[i];
+           temp[k] = set[i];
             i++;
             k++;
         }
@@ -106,13 +112,7 @@ void merge(vector<T>& set, int low, int mid, int high, bool (*compare)(const T&,
     // Copy over any remaining elements of left subvector
     while (i <= mid)
     {
-        /*
-         * Copy element i of set into element k of temp
-         * Add one to i
-         * Add one to k
-         *
-         */
-        temp[k] = set[i];
+       temp[k] = set[i];
         i++;
         k++;
     }
@@ -120,13 +120,7 @@ void merge(vector<T>& set, int low, int mid, int high, bool (*compare)(const T&,
     // Copy over any remaining elements of right subvector
     while (j <= high)
     {
-        /*
-         * Copy element j of set into element k of temp
-         * Add one to j
-         * Add one to k
-         *
-         */
-        temp[k] = set[j];
+       temp[k] = set[j];
         j++;
         k++;
     }
